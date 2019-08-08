@@ -1,0 +1,12 @@
+#Pasta de modulos
+node_modules/
+build/
+
+#Configuração Sistema
+.ENV
+yarn.lock
+
+#Miscellaneous
+.vscode
+*.sublime-project
+*.sublime-workspace
