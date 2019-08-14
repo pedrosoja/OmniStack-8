@@ -3,6 +3,7 @@ const Dev = require('../models/Dev');
 
 module.exports = {
     async index(req, res){
+        
         const { user } = req.headers;
 
         const loggedDev = await Dev.findById(user);
@@ -13,13 +14,15 @@ module.exports = {
                 { _id: { $nin: loggedDev.likes}},
                 { _id: { $nin: loggedDev.dislikes}},
             ],
-        })
+        });
 
         return res.json(users);
 
     },
 
     async store(req, res){
+        console.log(req.body);
+        
         const { username } = req.body;
 
         const userExists = await Dev.findOne({ user: username});
@@ -42,3 +45,4 @@ module.exports = {
         return res.json(dev);
     }
 };
+

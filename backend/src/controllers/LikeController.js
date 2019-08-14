@@ -2,6 +2,8 @@ const Dev = require('../models/Dev');
 
 module.exports = {
     async store(req, res) {
+        console.log(`devId: ${req.params.devId}`);
+        console.log(`user: ${req.headers.user}`);
 
         const { user } = req.headers;
         const { devId } = req.params;
@@ -14,7 +16,7 @@ module.exports = {
         }
 
         if(targetDev.likes.includes(loggedDev._id)){
-            console.log('Deu MATCH!!');
+            console.log(`Deu MATCH entre ${targetDev.name} e ${loggedDev.name}`)
         }
 
         loggedDev.likes.push(targetDev._id);

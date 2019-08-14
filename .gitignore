@@ -1,17 +1,21 @@
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
+android
+ios
 
 # testing
 /coverage
+__tests__
 
 # production
-build/
+build
 
 #Miscellaneous
 .ENV
 yarn.lock
+videos-aula
 
 .DS_Store
 .env.local
